@@ -4,3 +4,7 @@ exports.index = function(req, res) {
 
 exports.add_hike = function(req, res) {
 };
+
+exports.india = function(req, res) {
+    res.render('hike', {title: 'INDIA!'});
+};

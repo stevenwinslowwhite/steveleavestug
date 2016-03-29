@@ -13,6 +13,7 @@ var app = express();
 
 app.get('/hikes', hike.index);
 app.post('/add_hike', hike.add_hike);
+app.get('/india', hike.india);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
