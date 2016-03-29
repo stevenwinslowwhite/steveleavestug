@@ -6,12 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var hike = require('./routes/hike');
+var entries = require('./routes/entries');
 
 var app = express();
 
-app.get('/hikes', hike.index);
-app.get('/india', hike.india);
+app.get('/first', entries.first);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
