@@ -1,6 +1,18 @@
+.body-wrapper {
+  min-height: 100%;
+  margin-top: -14px;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.content {
+  min-height: 500px;
 }
 
 a {

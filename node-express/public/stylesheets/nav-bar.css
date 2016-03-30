@@ -1,0 +1,26 @@
+#header,#footer {
+  text-align: center;
+  background-color: beige;
+}
+
+#header {
+  height: 150px;
+}
+
+#footer {
+  height: 50px;
+}
+
+#nav-bar {
+  text-align: center;
+  background-color: bisque;
+}
+
+#nav-bar a {
+  display: inline-block;
+  width: 10%;
+  cursor: pointer;
+  margin: 10px 50px;
+  text-decoration: none;
+  color: black;
+}

@@ -2,7 +2,10 @@
 doctype html
 html
   include ./head.jade
-  body
-    h1 My Site
-    p Welcome to my super lame site.
-    include ./foot.jade
+  .body-wrapper 
+    body
+      include ./nav-bar.jade    
+      .content
+        p Insert some content here
+        p list blog entries here
+      include ./foot.jade
