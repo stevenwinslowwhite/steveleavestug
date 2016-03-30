@@ -1,0 +1,12 @@
+Main page layout
+main page content
+sub pages template
+sub page 1 - implement
+sub page 2 - implement
+sub page 3 - implement
+subscribe button / schema
+footer layout / content
+header layout / image
+first blog post
+wire up db properly (move to dynamo) / setup test mode using local db
+get URL setup
