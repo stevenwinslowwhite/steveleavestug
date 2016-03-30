@@ -1,5 +1,8 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+//- index.jade
+doctype html
+html
+  include ./head.jade
+  body
+    h1 My Site
+    p Welcome to my super lame site.
+    include ./foot.jade

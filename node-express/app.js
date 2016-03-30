@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var sqlite3 = require('sqlite3').verbose()
+var db = new sqlite3.Database('cozy.db');
 
 var routes = require('./routes/index');
 var entries = require('./routes/entries');
@@ -25,6 +27,7 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use(express.static('public'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -57,5 +60,27 @@ app.use(function(err, req, res, next) {
   });
 });
 
+db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='blog_entries'",
+       function(err, rows) {
+	   if(err !== null) {
+	       console.log(err);
+	   }
+	   else if(rows === undefined) {
+	       db.run('CREATE TABLE "blog_entries" ' +
+           '("id" INTEGER PRIMARY KEY AUTOINCREMENT, ' +
+           '"title" VARCHAR(255), ' +
+	   'entry text)', function(err) {
+			  if(err !== null) {
+			      console.log(err);
+			  }
+			  else {
+			      console.log("SQL Table 'blog_entries' initialized.");
+			  }
+		      });
+	   }
+	   else {
+	       console.log("SQL Table 'blog_entries'' already initialized.");
+	   }
+       });
 
 module.exports = app;
