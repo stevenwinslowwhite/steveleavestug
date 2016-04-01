@@ -9,6 +9,31 @@ var routes = require('./routes/index');
 var entries = require('./routes/entries');
 
 var app = express();
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+	host     : 'aa171dlwksarfbw.cagxvqgtc5mi.us-west-2.rds.amazonaws.com',
+	user     : 'steven',
+	password : 'asiaventure',
+	port     : 3306,
+	database : 'ebdb'
+    });
+
+
+connection.connect(function(err){
+	if(err){
+	    console.log('Error connecting to Db', err);
+	    return;
+	}
+	console.log('Connection established');
+    });
+
+connection.query('SELECT * FROM blog_entries',function(err,rows){
+	if(err) throw err;
+
+	console.log('Data received from Db:\n');
+	console.log(rows);
+    });
 
 app.get('/first', entries.first);
 
