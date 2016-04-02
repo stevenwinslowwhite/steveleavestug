@@ -1,26 +1,34 @@
 #header,#footer {
   text-align: center;
   background-color: beige;
+  cursor: default;
 }
 
 #header {
-  height: 150px;
+  height: 200px;
+  padding-top: 70px;
+  background-image: url('../images/background.png');
 }
 
 #footer {
   height: 50px;
 }
 
-#nav-bar {
-  text-align: center;
-  background-color: bisque;
+#header .left {
+    float: left;
+    width: 65%;
+    display: inline-block;
+    font-size: 40px;
 }
 
-#nav-bar a {
-  display: inline-block;
-  width: 10%;
-  cursor: pointer;
-  margin: 10px 50px;
-  text-decoration: none;
-  color: black;
+#header .right {
+    text-align: left;
+    float: right;
+    width: 30%;
+    display: inline-block;
+}
+
+#header .right .title {
+  padding-bottom: 20px;
+  text-align: center;
 }

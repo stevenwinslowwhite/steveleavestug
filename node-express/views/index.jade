@@ -6,11 +6,6 @@ html
     body
       include ./nav-bar.jade    
       .content
-        .header Welcome to my blog
-        .body Blog entries below
-        ul
-          each val in subjects
-            li= val
-        p Insert some content here
-        p list blog entries here
-      include ./foot.jade
+        include ./main-content.jade
+        include ./right-content.jade
+        include ./foot.jade

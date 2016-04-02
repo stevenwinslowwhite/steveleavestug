@@ -6,12 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var entries = require('./routes/entries');
 var db = require('./db');
 
 var app = express();
-
-app.get('/first', entries.first);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,8 +44,6 @@ if (app.get('env') === 'development') {
     });
   });
   console.log("Using dev");
-} else {
-  console.log("Using prod");
 }
 
 // production error handler

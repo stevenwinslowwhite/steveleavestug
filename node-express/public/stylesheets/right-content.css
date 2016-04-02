@@ -1,0 +1,38 @@
+.content .right {
+	width: 30%;
+	float: right;
+	display: inline-block;
+	cursor: default;
+	background-color: ghostwhite;
+}
+
+.content .right .name {
+	text-align: center;
+	margin-bottom: 30px;
+	margin-left: 40px;
+	margin-right: 40px;
+	padding-bottom: 25px;
+	border-bottom: 1px grey solid;
+	padding-top: 20px;
+}
+
+.content .right .description {
+	margin-left: 40px;
+	margin-right: 40px;
+	padding-bottom: 25px;
+	border-bottom: 1px grey solid;
+}
+
+.content .right .social {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.content .right .social-item {
+	display: inline-block;
+	text-align: center;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}

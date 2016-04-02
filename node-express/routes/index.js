@@ -6,13 +6,17 @@ var app = express();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-	var subjectLines = [];
+	var entries = [];
 	db.query('SELECT * FROM blog_entries',function(err,rows){
 	  if(err) throw err;
       rows.forEach(function(row) {
-      	subjectLines.push(row.subject);
+      	entries.push({
+      		subject: row.subject,
+      		content: row.entry_text,
+      		date: row.entry_date
+      	});
       });
-	  res.render('index', { subjects: subjectLines });
+	  res.render('index', { entries: entries });
 	});
 });
 
