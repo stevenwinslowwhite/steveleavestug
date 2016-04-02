@@ -13,7 +13,16 @@
 	font-size: 30px;
 }
 
+.content .left .blog-entry-wrapper {
+	overflow: hidden;
+}
+
 .content .left .blog-entry {
-	display: none;
-	animation: ease-in-out; <!--TODO -->
+	margin-top:-100%;
+	-webkit-transition:margin-top 500ms;
+	transition:margin-top 500ms;
+}
+
+.content .left .blog-entry.open {
+	margin-top: 0;
 }

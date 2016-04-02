@@ -13,7 +13,8 @@ router.get('/', function(req, res, next) {
       	entries.push({
       		subject: row.subject,
       		content: row.entry_text,
-      		date: row.entry_date
+      		date: row.entry_date,
+                  id: row.id
       	});
       });
 	  res.render('index', { entries: entries });
