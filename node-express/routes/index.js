@@ -12,11 +12,7 @@ router.get('/', function(req, res, next) {
       rows.forEach(function(row) {
       	subjectLines.push(row.subject);
       });
-      if (app.get('env') === 'development') {
-	  	res.render('index', { subjects: subjectLines });
-	  } else {
-	  	res.render('index', { subjects: ["asdf", "fdas"]});
-	  }
+	  res.render('index', { subjects: subjectLines });
 	});
 });
 

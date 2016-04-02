@@ -1,10 +1,13 @@
-var mysql      = require('mysql');
+var mysql  = require('mysql');
+var env = process.env.NODE_ENV || 'development';
+var config = require('./config')[env];
+
 var connection = mysql.createConnection({
-    host     : 'aa171dlwksarfbw.cagxvqgtc5mi.us-west-2.rds.amazonaws.com',
-    user     : 'steven',
-    password : 'asiaventure',
-    port     : 3306,
-    database : 'ebdb'
+    host     : config.database.host,
+    user     : config.database.user,
+    password : config.database.password,
+    port     : config.database.port,
+    database : config.database.name
 });
 
 connection.connect(function(err) {
