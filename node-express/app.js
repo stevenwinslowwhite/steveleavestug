@@ -17,6 +17,9 @@ require("jsdom").env("", function(err, window) {
   }
  
   var $ = require("jquery")(window);
+  $('.subject').click(function(e) {  
+    alert(1);
+  });
 });
 
 // view engine setup

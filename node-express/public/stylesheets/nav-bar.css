@@ -5,30 +5,43 @@
 }
 
 #header {
-  height: 200px;
-  padding-top: 70px;
   background-image: url('../images/background.png');
 }
 
-#footer {
-  height: 50px;
-}
-
 #header .left {
+    text-align: left;
+    padding-left: 75px;
     float: left;
-    width: 65%;
     display: inline-block;
     font-size: 40px;
+    font-family: fantasy;
+    font-size: 60px;
 }
 
 #header .right {
     text-align: left;
     float: right;
-    width: 30%;
+    width: 25%;
     display: inline-block;
+    opacity: .7;
+    height: 40%;
+    background-color: ghostwhite;
+    margin-top: 50px;
+    padding: 25px 0;
+    margin-right: 50px;
 }
 
 #header .right .title {
   padding-bottom: 20px;
   text-align: center;
+}
+
+#header .right .subtitle {
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  #header .right {
+    display: none;
+  }
 }

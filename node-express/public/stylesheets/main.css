@@ -1,15 +1,15 @@
 .content .left {
-	width: 65%;
+	width: 70%;
 	float: left;
 	display: inline-block;
+}
+
+.content .left .selected-entry {
 	padding-left: 40px;
 }
 
 .content .left .subject {
-	cursor: pointer;
-	color: blue;
-	text-decoration: underline;
-	margin: 25px;
+	margin: 25px 0;
 	font-size: 30px;
 }
 
@@ -25,4 +25,22 @@
 
 .content .left .blog-entry.open {
 	margin-top: 0;
+	padding-bottom: 50px;
+}
+
+#header .tab {
+	display: inline-block;
+	padding: 20px;
+	cursor: pointer;
+	color: ghostwhite;
+}
+
+#header .tab:hover {
+	background-color: darkgrey;
+}
+
+#header .entry-nav {
+	background-color: grey;
+	opacity: .5;
+	clear: both;
 }
