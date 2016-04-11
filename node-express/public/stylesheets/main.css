@@ -1,8 +1,5 @@
 .content .left {
-}
-
-.content .left .selected-entry {
-	padding-left: 40px;
+	padding: 0 40px 50px 40px;
 }
 
 .content .left .subject {
@@ -13,11 +10,10 @@
 .content .left .blog-entry {
 	font-size: 14px;
 	margin-top: 0;
-	padding-bottom: 50px;
 	text-align: justify;
 }
 
-.content .left .blog-entry-wrapper {
+.content .left .blog-entry {
 	padding-right: 20px;
 }
 
@@ -38,8 +34,16 @@
 	clear: both;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .content .right {
     display: none;
+  }
+
+  #header .tab {
+  	font-size: 24px;
+  }
+
+  .content .left .blog-entry p {
+	padding-top: 20px;
   }
 }
