@@ -1,7 +1,4 @@
 .content .left {
-	width: 70%;
-	float: left;
-	display: inline-block;
 }
 
 .content .left .selected-entry {
@@ -13,19 +10,15 @@
 	font-size: 30px;
 }
 
-.content .left .blog-entry-wrapper {
-	overflow: hidden;
-}
-
 .content .left .blog-entry {
-	margin-top:-100%;
-	-webkit-transition:margin-top 500ms;
-	transition:margin-top 500ms;
+	font-size: 14px;
+	margin-top: 0;
+	padding-bottom: 50px;
+	padding-right: 20px;
+	text-align: justify;
 }
 
 .content .left .blog-entry.open {
-	margin-top: 0;
-	padding-bottom: 50px;
 }
 
 #header .tab {
@@ -43,4 +36,10 @@
 	background-color: grey;
 	opacity: .5;
 	clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .content .right {
+    display: none;
+  }
 }

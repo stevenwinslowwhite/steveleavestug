@@ -1,8 +1,9 @@
 .content .right {
-	width: 30%;
+	width: 350px;
+	height: 350px;
 	float: right;
-	display: inline-block;
 	cursor: default;
+	margin-left: 20px;
 	background-color: ghostwhite;
 }
 
@@ -35,4 +36,8 @@
 	padding-top: 20px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.content .right .social-item img {
+	width: 48px;
 }

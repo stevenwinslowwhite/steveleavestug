@@ -1,3 +1,10 @@
 div.subject(class=entry.id) #{entry.subject}
-.blog-entry-wrapper
-    div.blog-entry.open(class=entry.id) #{entry.content}
+  .blog-entry-wrapper
+    div.blog-entry.open(class=entry.id)
+      each element in entry.content
+        if (element.content_type == 1)
+          p #{element.content}
+        else if (element.content_type == 2)
+          img(src=element.content)
+        else if (element.content_type == 3)
+          iframe(width='420' height='315' src='http://www.youtube.com/embed/XGSy3_Czz8k')
