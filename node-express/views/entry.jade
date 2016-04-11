@@ -2,7 +2,7 @@ div.subject #{entry.subject}
   .blog-entry
     each element in entry.content
       if (element.content_type == 1)
-        p(class=entry.class) #{element.content}
+        p(class=element.class) #{element.content}
       else if (element.content_type == 2)
         img(src=element.content class=element.class)
       else if (element.content_type == 3)

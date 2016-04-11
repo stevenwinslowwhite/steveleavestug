@@ -42,7 +42,8 @@ function setupModelForEntryId(rowId, res) {
             entry_rows.forEach(function(entry_row) {
                   elements.push({
                     content: entry_row.entry_content,
-                    content_type: entry_row.entry_type
+                    content_type: entry_row.entry_type,
+                    class: entry_row.style_class
                   });
             });
             entry = {

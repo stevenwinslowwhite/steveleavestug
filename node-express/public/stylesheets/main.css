@@ -17,6 +17,12 @@
 	padding-right: 20px;
 }
 
+.content .left .blog-entry .list-item {
+	display: list-item;
+	margin: 0 0;
+	margin-left: 50px;
+}
+
 #header .tab {
 	display: inline-block;
 	padding: 20px;
@@ -34,6 +40,20 @@
 	clear: both;
 }
 
+.content .left .full-width-img {
+	
+}
+
+.content .left .two-third-width-img {
+	width: 60%;
+	padding: 10px;
+}
+
+.content .left .third-width-img {
+	width: 30%;
+	padding: 10px;
+}
+
 @media screen and (max-width: 1000px) {
   .content .right {
     display: none;
@@ -45,5 +65,21 @@
 
   .content .left .blog-entry p {
 	padding-top: 20px;
+  }
+
+
+  .content .left .full-width-img {
+	width: 100%;
+	padding: 0;
+  }
+
+  .content .left .two-third-width-img {
+	width: 100%;
+	padding: 0;
+  }
+
+  .content .left .third-width-img {
+	width: 100%;
+	padding: 0;
   }
 }
