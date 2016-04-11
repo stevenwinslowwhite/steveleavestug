@@ -1,8 +1,30 @@
 .donde {
 	padding-top: 25px;
-	display: block;
+	display: inline-block;
 }
 
 #footer {
 	height: 75px;
+}
+
+#footer .social-item {
+	display: inline-block;
+}
+
+#footer .social {
+	display: inline-block;
+	float: left;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+#footer .social img {
+	width: 24px;
+	padding-left: 20px;
+}
+
+@media screen and (min-width: 800px) {
+  #footer .social {
+    display: none;
+  }
 }
