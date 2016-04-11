@@ -1,3 +1,4 @@
 .entry-nav
   each subject in subjects
-    div.tab #{subject}
+    a(href="/?entry=#{subject.id}")
+      div.tab #{subject.name}
