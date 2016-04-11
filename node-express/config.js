@@ -10,9 +10,9 @@ var config = {
     },
     production: {
         database: {
-            host     : 'aa171dlwksarfbw.cagxvqgtc5mi.us-west-2.rds.amazonaws.com',
+            host     : 'aa1h0mgh57eoqxv.cagxvqgtc5mi.us-west-2.rds.amazonaws.com',
             user     : 'steven',
-            password : 'asiaventure',
+            password : 'sabbatical',
             port     : 3306,
             name : 'ebdb'
         }
