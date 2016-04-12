@@ -1,21 +1,20 @@
 #footer {
-	height: 75px;
+	height: 150px;
 	width: 100%;
 	display: none;
 }
 
 #footer .social {
-	padding-top: 25px;
+	padding-top: 50px;
 }
 
 #footer .social-item {
 	display: inline-block;
-	padding: 0 10px;
+	padding: 0 20px;
 }
 
 #footer .social img {
-	width: 24px;
-	
+	width: 48px;
 }
 
 @media screen and (max-width: 1000px) {
