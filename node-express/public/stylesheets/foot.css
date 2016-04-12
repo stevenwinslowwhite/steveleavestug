@@ -4,21 +4,22 @@
 	display: none;
 }
 
+#footer .social {
+	padding-top: 25px;
+}
+
 #footer .social-item {
 	display: inline-block;
+	padding: 0 10px;
 }
 
 #footer .social img {
 	width: 24px;
-	margin: 20px 10px 0 10px;
+	
 }
 
 @media screen and (max-width: 1000px) {
   #footer {
-  }
-
-  #footer .donde {
-    font-size: 30px;
-    padding-top: 20px;
+  	display: inline-block;
   }
 }
