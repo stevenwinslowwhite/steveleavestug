@@ -5,7 +5,11 @@ var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-      db.query('SELECT MAX(ID) as ID from blog_entries where is_published = true', function(err, rows) {
+      var sql = 'SELECT MAX(ID) as ID from blog_entries';
+      if (req.query.seeUnpublished !== "true") {
+        sql += ' where is_published = true';
+      }
+      db.query(sql, function(err, rows) {
         var rowId = rows[0].ID;
         var queryParamId = null;
         if (!isNaN(parseFloat(req.query.entry)) && isFinite(req.query.entry) && req.query.entry <= rowId
@@ -13,25 +17,25 @@ router.get('/', function(req, res, next) {
           queryParamId = req.query.entry;
         }
         if (queryParamId === null) {
-            setupModelForEntryId(rowId, res);
+            setupModelForEntryId(rowId, req, res);
         } else {
-          db.query('SELECT * FROM blog_entries where is_published = true and id = ' + queryParamId, function(err, rows) {
+          db.query('SELECT * FROM blog_entries where id = ' + queryParamId, function(err, rows) {
             var queryRow = rows[0];
             if (queryRow != null && queryRow.id == queryParamId) {
-              setupModelForEntryId(queryParamId, res);
+              setupModelForEntryId(queryParamId, req, res);
             } else {
-              setupModelForEntryId(rowId, res);
+              setupModelForEntryId(rowId, req, res);
             }
           });
         }
       });
 });
 
-function setupModelForEntryId(rowId, res) {
+function setupModelForEntryId(rowId, req, res) {
     var entry = null;
     var elements = [];
     var subjects = [];
-    db.query('SELECT * from blog_entries where is_published = true AND id = ' + rowId, function(err,rows) {
+    db.query('SELECT * from blog_entries where id = ' + rowId, function(err,rows) {
         var blog_entry = rows[0];
         if (!blog_entry) {
           return;
@@ -52,7 +56,11 @@ function setupModelForEntryId(rowId, res) {
               content: elements,
               id: blog_entry.id
             };
-            db.query('SELECT short_subject, id from blog_entries where is_published = true', function(err, rows) {
+            var sql = 'SELECT short_subject, id from blog_entries';
+            if (req.query.seeUnpublished !== "true") {
+              sql +=  ' where is_published = true';
+            }
+            db.query(sql, function(err, rows) {
               rows.forEach(function(subject) {
                 subjects.push({
                   id: subject.id,
