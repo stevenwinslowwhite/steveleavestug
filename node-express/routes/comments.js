@@ -23,7 +23,11 @@ router.post('/', function(req, res) {
 	} else if (name === "mypass") {
 		name = "Steven";
 	}
-	var comment = { name: name, comment: req.body.comment,
+	var comment = req.body.comment.substring(0, 1000);
+	if (comment.length == 1000) {
+		comment += " (Truncated remaining comments, max 1000 chars)";
+	}
+	var comment = { name: name, comment: comment,
 		entry_date: new Date(), entry_reference: req.body.entry_reference };
 
 	db.query('INSERT INTO comments SET ?', comment, function(err, result) {
