@@ -1,0 +1,11 @@
+.new-comment
+  form(action="/comments", method="post")
+    .name-input
+      .input-label Name: 
+      input(type="text" name="name", required=true)
+    .comment-input
+      .input-label Comment: 
+      input(type="text" name="comment", required = true)
+    .submit-input
+      input(type="submit" name="save" value="submit")
+      input(type="hidden" name="entry_reference", value="3", required = true)

@@ -1,0 +1,16 @@
+#comments
+  p.comment-header Comments
+  include ./new-comment.jade
+  each comment in entry.comments
+    div.name-display #{comment.name}
+    div.date-display (#{prettyDate(comment.entry_date)})
+    div.comment-display #{comment.comment}
+
+-function prettyDate(dateString) {
+-	var date = new Date(dateString);
+-	var d = date.getDate();
+-	var monthNames = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+-	var m = monthNames[date.getMonth()];
+-	var y = date.getFullYear();
+-	return m + ' ' + d + ', ' + y;
+-}

@@ -50,24 +50,27 @@ function setupModelForEntryId(rowId, req, res) {
                     class: entry_row.style_class
                   });
             });
-            entry = {
-              subject: blog_entry.subject,
-              date: blog_entry.entry_date,
-              content: elements,
-              id: blog_entry.id
-            };
-            var sql = 'SELECT short_subject, id from blog_entries';
-            if (req.query.seeUnpublished !== "true") {
-              sql +=  ' where is_published = true';
-            }
-            db.query(sql, function(err, rows) {
-              rows.forEach(function(subject) {
-                subjects.push({
-                  id: subject.id,
-                  name: subject.short_subject
+            db.query('SELECT * from comments where entry_reference = ' + rowId + ' order by id desc', function(err, comments) {
+                entry = {
+                  subject: blog_entry.subject,
+                  date: blog_entry.entry_date,
+                  content: elements,
+                  id: blog_entry.id,
+                  comments: comments
+                };
+                var sql = 'SELECT short_subject, id from blog_entries';
+                if (req.query.seeUnpublished !== "true") {
+                  sql +=  ' where is_published = true';
+                }
+                db.query(sql, function(err, rows) {
+                  rows.forEach(function(subject) {
+                    subjects.push({
+                      id: subject.id,
+                      name: subject.short_subject
+                    });
+                  });
+                  res.render('index', { entry: entry, subjects: subjects });
                 });
-              });
-              res.render('index', { entry: entry, subjects: subjects });
             });
         });
     });

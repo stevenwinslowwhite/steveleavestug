@@ -5,23 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+var indexRoute = require('./routes/index');
+var commentsRoute = require('./routes/comments');
 var db = require('./db');
 
 var app = express();
-
-require("jsdom").env("", function(err, window) {
-  if (err) {
-    console.error(err);
-    return;
-  }
- 
-  var $ = require("jquery")(window);
-  $('.subject').click(function(e) {  
-    alert(1);
-  });
-});
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -33,7 +21,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', routes);
+app.use('/', indexRoute);
+app.use('/comments', commentsRoute);
 app.use(express.static('public'));
 
 // catch 404 and forward to error handler
