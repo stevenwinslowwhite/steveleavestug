@@ -26,12 +26,15 @@ router.post('/', function(req, res) {
 	var comment = { name: name, comment: req.body.comment,
 		entry_date: new Date(), entry_reference: req.body.entry_reference };
 
-	db.query('INSERT INTO comments SET ?', comment, function(err, res) {
-		if (err) throw err;
-		console.log('Inserted values to comments');
+	db.query('INSERT INTO comments SET ?', comment, function(err, result) {
+		console.log("inserted");
 	});
+	redirect(req, res);
+});
+
+function redirect(req, res) {
 	var url = req.header("Referer") + "#comments";
 	res.redirect(url);
-});
+}
 
 module.exports = router;

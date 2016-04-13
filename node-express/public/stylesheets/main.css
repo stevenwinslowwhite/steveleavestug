@@ -24,8 +24,8 @@
 
 .content .left .blog-entry .list-item {
 	display: list-item;
-	margin: 0 0;
-	margin-left: 50px;
+	margin: 0 0 0 50px;
+	padding: 0;
 }
 
 #header .tab {
@@ -50,16 +50,13 @@
 }
 
 .content .left .two-third-width-img {
-	
+	width: 64%;
+	padding: 1%;
 }
 
 .content .left .third-width-img {
-	width: 30%;
-	padding: 10px;
-}
-
-.content .left .two-third-width-img {
-	
+	width: 31%;
+	padding: 1%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -73,5 +70,13 @@
 
   .content .left .blog-entry p {
 	padding-top: 20px;
+  }
+
+  .content .left .two-third-width-img {
+  	  width: 95%;
+  }
+
+  .content .left .third-width-img {
+  	  width: 95%;
   }
 }
