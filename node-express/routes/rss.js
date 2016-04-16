@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 	    description: 'Blogging about my adventures',
 	    feed_url: 'http://steveleavestug.com/feed',
 	    site_url: 'http://steveleavestug.com',
-	    image_url: 'http://steveleavestug.com/tug.jpg',
+	    image_url: 'http://steveleavestug.com/public/images/tug.jpg',
 	    language: 'en',
     	webMaster: 'Steven White',
 	    pubDate: 'April 7, 2016 00:00:00 GMT',
