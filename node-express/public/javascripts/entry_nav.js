@@ -4,7 +4,7 @@ window.onload = function() {
 	if (window.innerWidth <= 1000) {
 		multiplier = 290;
 	}
-	document.getElementById('scroller').setAttribute('style', 'width: ' + ((numElements-1) * multiplier) + 'px');
+	document.getElementById('scroller').setAttribute('style', 'width: ' + ((numElements) * multiplier) + 'px');
 
 	// var queryParam = window.location.search;
 	// var entryId = numElements - 1;
