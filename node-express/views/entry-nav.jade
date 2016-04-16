@@ -1,4 +1,5 @@
 .entry-nav
-  each subject in subjects
-    a(href="/?entry=#{subject.id}")
-      div.tab #{subject.name}
+  #scroller
+    each subject in subjects
+      a(href="/?entry=#{subject.id}" id="entry-#{subject.id}")
+        div.tab #{subject.name}

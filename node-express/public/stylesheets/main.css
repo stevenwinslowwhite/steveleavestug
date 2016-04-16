@@ -28,23 +28,6 @@
 	padding: 0;
 }
 
-#header .tab {
-	display: inline-block;
-	padding: 20px;
-	cursor: pointer;
-	color: ghostwhite;
-}
-
-#header .tab:hover {
-	background-color: darkgrey;
-}
-
-#header .entry-nav {
-	background-color: grey;
-	opacity: .5;
-	clear: both;
-}
-
 .content .left .full-width-img {
 	
 }

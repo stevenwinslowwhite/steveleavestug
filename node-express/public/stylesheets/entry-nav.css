@@ -1,0 +1,36 @@
+#header .tab {
+	display: inline-block;
+	padding: 20px;
+	height: 24px;
+	cursor: pointer;
+	color: ghostwhite;
+	width: 150px;
+	text-align: center;
+}
+
+#header .tab:hover {
+	background-color: darkgrey;
+}
+
+#header .entry-nav {
+	background-color: grey;
+	opacity: .5;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 100%;
+}
+
+#header #scroller {
+	height: 55px;
+}
+
+@media screen and (max-width: 1000px) {
+  #header .tab {
+  	font-size: 24px;
+  	width: 250px;
+  }
+
+  #header #scroller {
+  	height: 64px;
+  }
+}

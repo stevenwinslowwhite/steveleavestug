@@ -1,6 +1,4 @@
 #header,#footer {
-  text-align: center;
-  background-color: beige;
   cursor: default;
 }
 
@@ -9,25 +7,22 @@
 }
 
 #header .left {
-    text-align: left;
-    padding-left: 75px;
-    float: left;
     display: inline-block;
     font-size: 40px;
     font-family: fantasy;
     font-size: 60px;
+    padding-left: 75px;
 }
 
 #header .right {
     text-align: left;
-    float: right;
     width: 320px;
     display: inline-block;
     opacity: .7;
-    height: 40%;
     background-color: ghostwhite;
-    margin-top: 50px;
     padding: 25px 0;
+    float: right;
+    margin-top: 48px;
     margin-right: 50px;
 }
 
@@ -46,8 +41,12 @@
   }
 
   #header .left {
-    padding: 0 10px;
     text-align: center;
-    float: none;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  #header p {
+    padding: 0 10px;
   }
 }
