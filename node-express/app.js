@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var indexRoute = require('./routes/index');
 var commentsRoute = require('./routes/comments');
+var rssRoute = require('./routes/rss');
 var db = require('./db');
 
 var app = express();
@@ -23,6 +24,7 @@ app.use(cookieParser());
 
 app.use('/', indexRoute);
 app.use('/comments', commentsRoute);
+app.use('/feed', rssRoute);
 app.use(express.static('public'));
 
 // catch 404 and forward to error handler

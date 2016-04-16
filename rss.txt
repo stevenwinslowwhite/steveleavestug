@@ -1,0 +1,38 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<channel>
+<title>
+<![CDATA[ Steve Leaves Tug ]]>
+</title>
+<description>
+<![CDATA[ Blogging about my adventures ]]>
+</description>
+<link>http://steveleavestug.com</link>
+<image>
+<url>http://steveleavestug.com/tug.jpg</url>
+<title>Steve Leaves Tug</title>
+<link>http://steveleavestug.com</link>
+</image>
+<generator>RSS for Node</generator>
+<lastBuildDate>Sat, 16 Apr 2016 01:39:34 GMT</lastBuildDate>
+<atom:link href="http://steveleavestug.com/feed" rel="self" type="application/rss+xml"/>
+<pubDate>Thu, 07 Apr 2016 00:00:00 GMT</pubDate>
+<language>
+<![CDATA[ en ]]>
+</language>
+<webMaster>
+<![CDATA[ Steven White ]]>
+</webMaster>
+<ttl>60</ttl>
+<item>
+<title>
+<![CDATA[ Austin, Texas ]]>
+</title>
+<link>http://steveleavestug.com/?entry=2</link>
+<guid isPermaLink="true">http://steveleavestug.com/?entry=2</guid>
+<dc:creator>
+<![CDATA[ Steven White ]]>
+</dc:creator>
+<pubDate>Wed, 13 Apr 2016 18:30:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
