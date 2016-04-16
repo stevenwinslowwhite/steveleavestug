@@ -5,7 +5,7 @@
       input(type="text" name="name", required=true)
     .comment-input
       .input-label Comment: 
-      input(type="text" name="comment", required = true)
+      textarea(name="comment", cols=30, rows=5, maxlength=1000, required = true)
     .submit-input
       input(type="submit" name="save" value="submit")
       input(type="hidden" name="entry_reference", value="#{entry.id}", required = true)

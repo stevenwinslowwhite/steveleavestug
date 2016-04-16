@@ -12,6 +12,8 @@
 #comments .input-label {
 	display: inline-block;
 	width: 100px;
+	float: left;
+	padding-bottom: 10px;
 }
 
 #comments .submit-input {
@@ -39,6 +41,12 @@
 
 #comments .comment-display {
 	padding-top: 5px;
+	word-break: break-word;
+}
+
+#comments input {
+	font-size: 14px;
+	padding: 10px;
 }
 
 @media screen and (min-width: 1001px) {
