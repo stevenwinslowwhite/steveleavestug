@@ -25,9 +25,7 @@
 }
 
 .content .right .social {
-	width: 100%;
 	text-align: center;
-	padding-bottom: 20px;
 }
 
 .content .right .social-item {
@@ -36,6 +34,15 @@
 	padding-top: 20px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.content .right .rss {
+	height: 30px;
+	text-align: center;
+}
+
+.content .right .rss img {
+	height: 30px;
 }
 
 .content .right .social-item img {
