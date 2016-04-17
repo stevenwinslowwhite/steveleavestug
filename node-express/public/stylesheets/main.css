@@ -37,6 +37,11 @@
 	padding: 1%;
 }
 
+.content .left .half-width-img {
+	width: 48%;
+	padding: 1%;
+}
+
 .content .left .third-width-img {
 	width: 31%;
 	padding: 1%;
