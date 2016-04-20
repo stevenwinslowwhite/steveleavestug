@@ -60,7 +60,7 @@ function setupModelForEntryId(rowId, req, res) {
                 };
                 var sql = 'SELECT short_subject, id from blog_entries';
                 if (req.query.seeUnpublished !== "true") {
-                  sql +=  ' where is_published = true';
+                  sql +=  ' where is_published = true order by id desc limit 5';
                 }
                 db.query(sql, function(err, rows) {
                   rows.forEach(function(subject) {
@@ -69,7 +69,24 @@ function setupModelForEntryId(rowId, req, res) {
                       name: subject.short_subject
                     });
                   });
-                  res.render('index', { entry: entry, subjects: subjects });
+                  var groupings = {};
+                  var groupedEntriesSql = 'SELECT be.id, be.short_subject, be.entry_date, g.group_display_name from blog_entries be join groupings g on g.id = be.grouping where be.is_published = true';
+                  db.query(groupedEntriesSql, function(err, groupedEntry) {
+                    groupedEntry.forEach(function(entry) {
+                      var currentGrouping = [];
+                      if (groupings[entry.group_display_name]) {
+                        currentGrouping = groupings[entry.group_display_name];
+                      }
+                      currentGrouping.push({
+                        id:  entry.id,
+                        subject: entry.short_subject,
+                        entryDate: entry.entry_date
+                      });
+                      groupings[entry.group_display_name] = currentGrouping;
+                    });
+                    console.log(groupings);
+                    res.render('index', { entry: entry, subjects: subjects, groupings: groupings });
+                  });
                 });
             });
         });

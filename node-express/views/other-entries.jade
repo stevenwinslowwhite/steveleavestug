@@ -1,0 +1,15 @@
+#entry-list
+  p.entries-header Older Posts
+  each group, groupName in groupings
+    .group
+      .group-name #{groupName}
+      each entry in group
+        .entry-link
+          a(href="/?entry=#{entry.id}")
+            .entry-subject #{entry.subject}&nbsp;
+            .entry-date #{prettyDate(entry.entryDate)}
+
+-function prettyDate(dateString) {
+-	var date = new Date(dateString);
+-   return (date.getMonth() + 1) + '/' + date.getDate();
+-}
