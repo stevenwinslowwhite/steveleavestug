@@ -7,6 +7,16 @@
 	font-size: 30px;
 }
 
+.content .left .h2 {
+	margin: 15px 0;
+	font-size: 25px;
+}
+
+.content .left .h3 {
+	margin: 10px 0;
+	font-size: 20px;
+}
+
 .content .left .blog-entry,.date {
 	font-size: 14px;
 	margin-top: 0;
@@ -28,6 +38,10 @@
 	padding: 0;
 }
 
+.content .left .h3 {
+
+}
+
 .content .left .full-width-img {
 	
 }
@@ -35,16 +49,19 @@
 .content .left .two-third-width-img {
 	width: 64%;
 	padding: 1%;
+	vertical-align: top;
 }
 
 .content .left .half-width-img {
 	width: 48%;
 	padding: 1%;
+	vertical-align: top;
 }
 
 .content .left .third-width-img {
 	width: 31%;
 	padding: 1%;
+	vertical-align: top;
 }
 
 @media screen and (max-width: 1000px) {

@@ -45,7 +45,7 @@ function setupModelForEntryId(rowId, req, res) {
             if(err) throw err;
             entry_rows.forEach(function(entry_row) {
                   elements.push({
-                    content: entry_row.entry_content,
+                    content: patternMatchContent(entry_row.entry_content),
                     content_type: entry_row.entry_type,
                     class: entry_row.style_class
                   });
@@ -74,6 +74,13 @@ function setupModelForEntryId(rowId, req, res) {
             });
         });
     });
+}
+
+function patternMatchContent(content) {
+  if (content == null) {
+    return null;
+  }
+  return content.replace(new RegExp("'''", 'g'), '"');
 }
 
 module.exports = router;
