@@ -19,14 +19,12 @@ router.get('/', function(req, res) {
 	
 	/* loop over data and add to feed */
     db.query('SELECT * from blog_entries where is_published = true', function(err,rows) {
-    	console.log("rows: " + rows);
     	rows.forEach(function(entry_row) {
 			feed.item({
 			    title:  entry_row.short_subject,
 			    description: entry_row.description,
 			    url: 'http://steveleavestug.com/?entry=' + entry_row.id, 
 			    author: 'Steven White',
-			    
 			    date: entry_row.entry_date
 			});
         });

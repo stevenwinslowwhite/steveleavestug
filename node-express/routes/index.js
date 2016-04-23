@@ -12,24 +12,18 @@ router.get('/', function(req, res, next) {
       db.query(sql, function(err, rows) {
         var rowId = rows[0].ID;
         var queryParamId = null;
-        console.log(req.query.entry);
         if (!isNaN(parseFloat(req.query.entry)) && isFinite(req.query.entry) && req.query.entry <= rowId
             && req.query.entry >= 0) {
           queryParamId = req.query.entry;
-          console.log("got in here");
         }
         if (queryParamId === null) {
-            console.log("bad");
             setupModelForEntryId(rowId, req, res);
         } else {
-          console.log("good");
           db.query('SELECT * FROM blog_entries where id = ' + queryParamId, function(err, rows) {
             var queryRow = rows[0];
             if (queryRow != null && queryRow.id == queryParamId) {
-              console.log("best");
               setupModelForEntryId(queryParamId, req, res);
             } else {
-              console.log("worst");
               setupModelForEntryId(rowId, req, res);
             }
           });
@@ -49,8 +43,6 @@ function setupModelForEntryId(rowId, req, res) {
         db.query('SELECT * from blog_entry_entries where blog_entry_id = ' + rowId + 
                      ' order by entry_number asc', function(err, entry_rows) {
             if(err) throw err;
-            console.log("did selection, got this: " + entry_rows);
-            console.log("SELECT * from blog_entry_entries where blog_entry_id = " + rowId + " order by entry_number asc");
             entry_rows.forEach(function(entry_row) {
                   elements.push({
                     content: patternMatchContent(entry_row.entry_content),
