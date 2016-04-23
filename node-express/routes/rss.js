@@ -26,6 +26,7 @@ router.get('/', function(req, res) {
 			    description: entry_row.description,
 			    url: 'http://steveleavestug.com/?entry=' + entry_row.id, 
 			    author: 'Steven White',
+			    
 			    date: entry_row.entry_date
 			});
         });
