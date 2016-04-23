@@ -42,18 +42,22 @@
 	padding: 0;
 }
 
-.content .left .h3 {
-
-}
-
 .content .left .full-width-img {
-	
+	width: 95ds%;
 }
 
 .content .left .two-third-width-img {
 	width: 64%;
 	padding: 1%;
 	vertical-align: top;
+}
+
+.content .left .left-img {
+	float: left;
+}
+
+.content .left .right-img {
+	float: right;
 }
 
 .content .left .half-width-img {
