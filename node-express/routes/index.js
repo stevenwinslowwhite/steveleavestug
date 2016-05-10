@@ -5,9 +5,9 @@ var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-      var sql = 'SELECT MAX(ID) as ID from blog_entries';
+      var sql = 'SELECT MAX(ID) as ID from blog_entries where is_featured = true ';
       if (req.query.seeUnpublished !== "true") {
-        sql += ' where is_published = true';
+        sql += ' and is_published = true';
       }
       db.query(sql, function(err, rows) {
         var rowId = rows[0].ID;
@@ -96,6 +96,7 @@ function patternMatchContent(content) {
   if (content == null) {
     return null;
   }
+  content = content.replace(new RegExp("''''[.*]''''", 'g'), '<span class="code">$0</span>');
   return content.replace(new RegExp("'''", 'g'), '"');
 }
 
