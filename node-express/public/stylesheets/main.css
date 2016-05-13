@@ -84,7 +84,24 @@
 
   .content .left .blog-entry p {
 	padding-top: 20px;
+	font-size: 24px;
   }
+
+.content .left .subject {
+	font-size: 40px;
+}
+
+.content .left .h2 {
+	font-size: 36px;
+}
+
+.content .left .h3 {
+	font-size: 30px;
+}
+
+.content .left .blog-entry,.date {
+	font-size: 24px;
+}
 
   .content .left .two-third-width-img {
   	  width: 95%;
