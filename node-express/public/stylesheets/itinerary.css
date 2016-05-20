@@ -1,0 +1,15 @@
+.itinerary-gmap {
+	padding: 30px;
+}
+
+
+.itinerary-gmap iframe {
+	width: 100%;
+	height: 480px;
+}
+
+@media screen and (max-width: 600px) {
+  #comments {
+  		display: none;
+  }
+}
