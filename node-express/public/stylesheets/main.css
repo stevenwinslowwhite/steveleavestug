@@ -91,12 +91,14 @@
 	font-size: 40px;
 }
 
-.content .left .h2 {
+.content .left .blog-entry .h2 {
 	font-size: 36px;
+	font-weight: bold;
 }
 
-.content .left .h3 {
+.content .left .blog-entry .h3 {
 	font-size: 30px;
+	font-weight: bold;
 }
 
 .content .left .blog-entry,.date {
