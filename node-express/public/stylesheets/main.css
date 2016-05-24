@@ -107,9 +107,11 @@
 
   .content .left .two-third-width-img {
   	  width: 95%;
+  	  float: none;
   }
 
   .content .left .third-width-img {
   	  width: 95%;
+  	  float: none;
   }
 }
