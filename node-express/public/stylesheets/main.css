@@ -73,6 +73,14 @@
 	vertical-align: top;
 }
 
+code{
+	background:#F8F8FF; 
+}
+
+.content .left .blog-entry div {
+	padding-top: 14px;
+}
+
 @media screen and (max-width: 1000px) {
   .content .right {
     display: none;
@@ -82,7 +90,7 @@
   	font-size: 24px;
   }
 
-  .content .left .blog-entry p {
+  .content .left .blog-entry div {
 	padding-top: 20px;
 	font-size: 24px;
   }

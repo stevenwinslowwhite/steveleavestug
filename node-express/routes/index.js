@@ -96,7 +96,8 @@ function patternMatchContent(content) {
   if (content == null) {
     return null;
   }
-  content = content.replace(new RegExp("''''[.*]''''", 'g'), '<span class="code">$0</span>');
+  content = content.replace(new RegExp("'''''", 'g'), '</code>');
+  content = content.replace(new RegExp("''''", 'g'), '<code>');
   return content.replace(new RegExp("'''", 'g'), '"');
 }
 
