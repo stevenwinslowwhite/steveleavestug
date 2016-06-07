@@ -53,6 +53,10 @@
 	vertical-align: top;
 }
 
+.content .left .youtube {
+	margin: 10px 10px 10px 0px;
+}
+
 .content .left .left-img {
 	float: left;
 }
