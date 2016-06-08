@@ -1,0 +1,10 @@
+block meta
+    meta(property='og:description', content='#{entry.subject}')
+    meta(property='og:title', content='#{entry.short_subject}')
+    meta(property='og:image', content='#{entry.fb_image}')
+    meta(property='og:type', content='website')
+    meta(property='og:url', content='http://steveleavestug.com/?entry=#{entry.id}')
+    meta(property='og:site_name', content='Steve Leaves Tug')
+    meta(property='article:published_time', content='#{entry.date}')
+    meta(property='article:author', content='#{entry.author}')
+    meta(property='article:section', content='#{entry.category}')

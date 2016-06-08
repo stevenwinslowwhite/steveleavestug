@@ -35,7 +35,7 @@ function setupModelForEntryId(rowId, req, res) {
     var entry = null;
     var elements = [];
     var subjects = [];
-    db.query('SELECT * from blog_entries where id = ' + rowId, function(err,rows) {
+    db.query('SELECT * from blog_entries be join groupings g on g.id = be.grouping where be.id = ' + rowId, function(err,rows) {
         var blog_entry = rows[0];
         if (!blog_entry) {
           return;
@@ -53,10 +53,14 @@ function setupModelForEntryId(rowId, req, res) {
             db.query('SELECT * from comments where entry_reference = ' + rowId + ' order by id desc', function(err, comments) {
                 entry = {
                   subject: blog_entry.subject,
+                  short_subject: blog_entry.short_subject,
                   date: blog_entry.entry_date,
                   content: elements,
                   id: blog_entry.id,
-                  comments: comments
+                  comments: comments,
+                  fb_image: blog_entry.fb_image,
+                  author: blog_entry.author,
+                  category: blog_entry.group_display_name
                 };
                 var sql = 'SELECT short_subject, id from blog_entries';
                 if (req.query.seeUnpublished !== "true") {
