@@ -51,16 +51,18 @@ function setupModelForEntryId(rowId, req, res) {
                   });
             });
             db.query('SELECT * from comments where entry_reference = ' + rowId + ' order by id desc', function(err, comments) {
+                var db_date = new Date(blog_entry.entry_date);
                 entry = {
                   subject: blog_entry.subject,
                   short_subject: blog_entry.short_subject,
                   date: blog_entry.entry_date,
                   content: elements,
-                  id: blog_entry.id,
+                  id: rowId,
                   comments: comments,
                   fb_image: blog_entry.fb_image,
                   author: blog_entry.author,
-                  category: blog_entry.group_display_name
+                  category: blog_entry.group_display_name,
+                  iso_date: db_date.toISOString()
                 };
                 var sql = 'SELECT short_subject, id from blog_entries';
                 if (req.query.seeUnpublished !== "true") {
