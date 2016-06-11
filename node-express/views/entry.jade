@@ -1,5 +1,7 @@
 div.subject #{entry.subject}
   .date #{prettyDate(entry.date)}
+  .fb
+    <div class="fb-like" data-href="http://steveleavestug.com/?entry=#{entry.id}" data-width="20" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
   .blog-entry
     each element in entry.content
       if (element.content_type == 1)
