@@ -7,7 +7,10 @@ div.subject #{entry.subject}
       if (element.content_type == 1)
         div(class=element.class) !{element.content}
       else if (element.content_type == 2)
-        img(src=element.content class=element.class)
+        div(class=element.class class="picture-container")
+          img(src=element.content)
+          if (element.img_text)
+            div(class="img-text") (!{element.img_text})
       else if (element.content_type == 3)
         iframe(width='420' height='315' src=element.content class=element.class)
 

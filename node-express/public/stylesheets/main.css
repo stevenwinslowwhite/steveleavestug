@@ -42,6 +42,14 @@
 	padding: 0;
 }
 
+.content .left img {
+	width: 100%;
+}
+
+.content .left .picture-container {
+	display: inline-block;
+}
+
 .content .left .full-width-img {
 	width: 97%;
 	padding: 1%;
@@ -59,7 +67,7 @@
 
 .content .left .left-img {
 	float: left;
-}
+}	
 
 .content .left .right-img {
 	float: right;
@@ -81,6 +89,12 @@
 	width: 19%;
 	padding: 1%;
 	vertical-align: top;
+}
+
+.content .left .img-text {
+	text-align: center;
+	margin-top: -10px;
+	font-family: initial;
 }
 
 

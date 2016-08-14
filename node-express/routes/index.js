@@ -47,7 +47,8 @@ function setupModelForEntryId(rowId, req, res) {
                   elements.push({
                     content: patternMatchContent(entry_row.entry_content),
                     content_type: entry_row.entry_type,
-                    class: entry_row.style_class
+                    class: entry_row.style_class,
+                    img_text: entry_row.img_text
                   });
             });
             db.query('SELECT * from comments where entry_reference = ' + rowId + ' order by id desc', function(err, comments) {
