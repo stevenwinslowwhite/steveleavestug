@@ -139,6 +139,11 @@ code{
 	font-size: 24px;
 }
 
+  .content .left .half-width-img {
+  	  width: 95%;
+  	  float: none;
+  }
+
   .content .left .two-third-width-img {
   	  width: 95%;
   	  float: none;
